@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: roblambert
+Build-Jdk: 1.7.0_25
+Extension-Name: cms-web
+Specification-Title: Web project for the CMS server
+Implementation-Title: cms-web
+Implementation-Version: 3.5.2-GA
+

@@ -1,0 +1,207 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>cms</artifactId>
+    <groupId>com.schawkds</groupId>
+    <version>3.5.2-GA</version>
+  </parent>
+
+  <groupId>com.schawkds</groupId>
+  <artifactId>cms-web</artifactId>
+  <packaging>war</packaging>
+  <name>SCHAWK CMS Web</name>
+  <description>Web project for the CMS server</description>
+
+  <dependencies>
+
+    <!-- <dependency>
+      <groupId>com.schawkds</groupId>
+      <artifactId>cms-service</artifactId>
+      <version>${project.version}</version>
+    </dependency> -->
+    
+    <dependency>
+      <groupId>com.schawkds</groupId>
+      <artifactId>schawk-parts</artifactId>
+      <version>3.5.2-GA</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>logkit</groupId>
+          <artifactId>logkit</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>avalon-framework</groupId>
+          <artifactId>avalon-framework</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>catalina</artifactId>
+      <version>6.0.20</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>asm</groupId>
+  	  <artifactId>asm</artifactId>
+      <version>3.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.adobe.blazeds</groupId> 
+  	  <artifactId>blazeds-common</artifactId>
+      <version>3.2.0.3978</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.adobe.blazeds</groupId> 
+  	  <artifactId>blazeds-core</artifactId>
+      <version>3.2.0.3978</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.adobe.blazeds</groupId> 
+  	  <artifactId>blazeds-proxy</artifactId>
+      <version>3.2.0.3978</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.adobe.blazeds</groupId> 
+  	  <artifactId>blazeds-remoting</artifactId>
+      <version>3.2.0.3978</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.adobe.flex</groupId> 
+  	  <artifactId>flex-rds-server</artifactId>
+      <version>272564</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.springframework.flex</groupId>
+      <artifactId>spring-flex</artifactId>
+      <version>1.0.3.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.adobe</groupId>
+      <artifactId>cfgatewayadapter</artifactId>
+      <version>3.0.0.544</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jmock</groupId>
+      <artifactId>jmock-junit4</artifactId>
+      <version>${jmock.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jmock</groupId>
+      <artifactId>jmock</artifactId>
+      <version>${jmock.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.8</version>
+		</dependency>
+		
+		<!-- Reflection Utils -->
+		<dependency>
+			<groupId>org.azeckoski</groupId>
+			<artifactId>reflectutils</artifactId>
+			<version>0.9.12</version>
+			<scope>compile</scope>
+		</dependency>  
+		
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>1.7.1</version>
+ 		</dependency>      
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
+    
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.0</version>
+        <configuration>
+          <warSourceDirectory>src/main/webapp</warSourceDirectory>
+          <archive>
+            <manifest>
+              <addClasspath>false</addClasspath>
+            </manifest>
+          </archive>
+          <dependentWarExcludes>WEB-INF/web.xml</dependentWarExcludes>
+          <packagingExcludes>rebel.xml</packagingExcludes>
+          <warName>cms-web</warName>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+  
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context debug="1"
+         reloadable="true">
+
+  <ResourceLink global="blueOLTP" 
+                name="jdbc/blueOLTP" 
+                type="javax.sql.DataSource"
+  />
+
+</Context>

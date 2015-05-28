@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.schawkds</groupId>
+    <artifactId>pentaho-web</artifactId>
+    <version>3.5.2-GA</version>
+  </parent>
+  
+  <artifactId>pentaho</artifactId>
+  <packaging>war</packaging>
+  <name>Pentaho BI Server</name>
+  <description>The main Pentaho BI server.</description>
+  <url>blue/blue-web/pentaho/pentaho</url>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <webXml>${pom.basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+          <archive>
+            <manifest>
+              <addClasspath>false</addClasspath>
+            </manifest>
+          </archive>
+          <dependentWarExcludes>WEB-INF/web.xml</dependentWarExcludes>
+          <webResources>
+            <resource>
+              <directory>src/main/webapp</directory>
+            </resource>
+          </webResources>
+          <warName>pentaho</warName>
+        </configuration>
+      </plugin>  
+    </plugins>
+  </build>
+</project>
